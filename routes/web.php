@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::view('issues','issues.index');
 
 Route::post('issues/store','IssuesController@store');
@@ -35,3 +35,6 @@ Route::get('custom/login/{id}', 'CustomAuthController@CustomLogin');
 Route::get('issues/list','IssuesController@list');
 
 Route::get('users','UsersController@export');
+
+Route::post('issues/import','IssuesController@importFromExcel');
+Route::view('issue-form','excel-import');
